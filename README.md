@@ -11,8 +11,9 @@ Download and unzip this repository
 # Setup
 After killing the divine dragon, go to the "Ashina Outskirts - Outskirts Wall - Stairway" idol.
 Verify the monitor running the game is set as your main monitor within your OS.
+Verify you are running the game in Full Screen.
 Change your in-game keyboard bindings to match the following:
-    Note: If you do not want to change your keybinds, go through the sekiro.py file and change all references to the key(s).
+    Note: If you do not want to change your keybinds, go through the sekiro.py file and change the key_map to match your binds.
     Movement:
         Slow Movement Shift = alt
         Move Forward = w
@@ -55,7 +56,7 @@ Verify the following in-game settings:
         Camera speed: 5
     Graphics Options:
         Screen Mode: Fullscreen
-        Screen Resolution: 2560x1440
+        Screen Resolution: 2560x1440 (This shoud not matter.)
         Automatic Rendering Adjustment: Off
 
 # Use
