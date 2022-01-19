@@ -5,48 +5,27 @@ key_map = {
     "slow movement shift" : 'alt',
     "move forward" : 'w',
     "move back" : 's',
-    "move left" : 'a',
-    "move right" : 'd',
-    "step dodge, (hold) sprint" : 'shift',
     "jump" : 'space',
     "crouch/release crouch" : 'q',
     "camera up" : 'up',
-    "camera down" : 'down',
     "camera left" : 'left',
     "camera right" : 'right',
     "camera reset/lock on" : 'm',
-    "cycle quick items (forward)" : 'x',
-    "cycle quick items (reverse)" : 'c',
-    "cycle prosthetic tool" : 'z',
     "attack" : 'n',
-    "use prosthetic tool" : 'ctrl',
-    "deflect, (hold) guard" : '',
     "grappling hook" : 'f',
     "action, (hold) collect loot" : 'e',
     "use item" : 'r',
-    "eavesdrop/touch remnant" : 'v',
-    "remnant menu/stop recording" : 'g'
 }
 
 
 ## Controller interface for the player character.
 # walking controls
-def walk_left(seconds):
-    pydirectinput.keyDown(key_map["move left"])
-    time.sleep(seconds)
-    pydirectinput.keyUp(key_map["move left"])
-
-def walk_right(seconds):
-    pydirectinput.keyDown(key_map["move right"])
-    time.sleep(seconds)
-    pydirectinput.keyUp(key_map["move right"])
-
 def walk_forward(seconds):
     pydirectinput.keyDown(key_map["move forward"])
     time.sleep(seconds)
     pydirectinput.keyUp(key_map["move forward"])
 
-def walk_forward_hold():
+def walk_forward_hold_start():
     pydirectinput.keyDown(key_map["move forward"])
 
 def walk_forward_hold_stop():
@@ -70,12 +49,6 @@ def toggle_stealth():
 
 def jump():
     pydirectinput.press(key_map['jump'])
-
-def dodge():
-    pydirectinput.press(key_map["step dodge, (hold) sprint"])
-
-def interact():
-    pydirectinput.press(key_map["action, (hold) collect loot"])
 
 def interact_hold(seconds):
     pydirectinput.keyDown(key_map["action, (hold) collect loot"])
