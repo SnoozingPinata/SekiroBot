@@ -55,3 +55,6 @@ You must progress the game to just before the final boss fight in order to use t
 - Pause the game and slide your mouse onto your second monitor, start the "sekiroFarm2.py" program.
 - You will see output in your terminal that the program has started and a 5 second countdown.
 - Slide your mouse back to Sekiro, click to regain focus on that window, exit the menu.
+- Review how much experience and gold you are receiving from a single kill and edit the following variables within sekiroFarm2.py:
+    - "money_from_kill"
+    - "exp_from_kill"
