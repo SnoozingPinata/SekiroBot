@@ -1,5 +1,5 @@
 # SekiroBot
-Python controller/Farming Bot for Sekiro: Shadows Die Twice for "Ashina Outskirts - Outskirts Wall - Stairway" location.
+Python farming bot for Sekiro: Shadows Die Twice for "Ashina Outskirts - Outskirts Wall - Stairway" location.
 You must progress the game to just before the final boss fight in order to use this farming bot.
 
 # Installation
