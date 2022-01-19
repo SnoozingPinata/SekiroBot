@@ -1,12 +1,12 @@
 import time
 import sekiro
 
+# Run this to begin the farm bot program.
+
 
 def countdown(seconds):
     print(f"\n\nStarting Sekiro Farmer bot in {seconds} seconds.")
     print("Set window focus to the game and exit any menus.")
-    print("Warp to the 'Ashina Outskirts: Outskirts Wall - Stairway' idol.")
-    print("Set the current item to the homeward idol.")
     print("View the README for instructions on setup.")
     for i in range(0, seconds):
         print(f" -- {i + 1}")
