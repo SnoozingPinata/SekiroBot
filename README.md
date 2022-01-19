@@ -7,7 +7,7 @@ Click the image below to see the bot in action:
 [![Alt text](https://img.youtube.com/vi/1Zt0m8rysnQ/0.jpg)](https://www.youtube.com/watch?v=1Zt0m8rysnQ)
 
 # Installation
-- Install Python v3.10.1 (Python 3+ should work without issue) `https://www.python.org/downloads/`
+- Install Python v3.10.1 (Python 3+ should work without issue) [Download Link](https://www.python.org/downloads/)
 - Install PyDirectInput v1.0.4 library: `pip install PyDirectInput==1.0.4`
 - Download and unzip this repository
 
