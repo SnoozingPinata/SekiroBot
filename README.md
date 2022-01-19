@@ -1,7 +1,6 @@
 # SekiroBot
-Python controller for Sekiro: Shadows Die Twice. 
-Includes a farming bot routine for a specific location.
-This is a very simple program I quickly made to farm experience.
+Python controller/Farming Bot for Sekiro: Shadows Die Twice for "Ashina Outskirts - Outskirts Wall - Stairway" location.
+You must progress the game to just before the final boss fight in order to use this farming bot.
 
 # Installation
 - Install Python
@@ -9,10 +8,9 @@ This is a very simple program I quickly made to farm experience.
 - Download and unzip this repository
 
 # Setup
-- After killing the divine dragon, go to the "Ashina Outskirts - Outskirts Wall - Stairway" idol.
 - Verify the monitor running the game is set as your main monitor within your OS.
 - Verify you are running the game in Full Screen.
-- Change your in-game keyboard bindings to match the following:
+- Change your in-game keyboard bindings to match for the following commands:
     - Note: If you do not want to change your keybinds, go through the sekiro.py file and change the key_map to match your binds.
     - Movement:
         - Slow Movement Shift = alt
@@ -20,7 +18,6 @@ This is a very simple program I quickly made to farm experience.
         - Move Back = s
         - Move Left = a
         - Move Right = d
-        - Step Dodge, (hold) Sprint = shift
         - Jump = space
         - Crouch/Release Crouch = q
     - Camera Controls:
@@ -29,20 +26,11 @@ This is a very simple program I quickly made to farm experience.
         - camera left = left arrow key
         - camera right = right arrow key
         - Camera Reset/Lock On = m
-    - Change Equipment:
-        - Cycle Quick Items (Forward) = x
-        - Cycle Quick Items (Reverse) = c
-        - Cycle Prosthetic Tool = z
     - Attack Action:
         - Attack = n
-        - Use Prosthetic Tool = ctrl
-        - Deflect, (Hold) Guard = Unbound (You don't need to unbind it, this is just my setting.)
         - Grappling Hook = f
         - Action, (hold) Collect Loot = e
         - Use Item = r
-        - Eavesdrop/Touch Remnant = v
-    - Remnants:
-        - Remnant Menu/Stop Recording = g
 - Verify the following in-game settings:
     - Note: Most of these will likely not affect the function of the script, but this is the only tested configuration.
     - Game Options:
@@ -60,6 +48,7 @@ This is a very simple program I quickly made to farm experience.
         - Automatic Rendering Adjustment: Off
 
 # Use
+- After killing the divine dragon, go to the "Ashina Outskirts - Outskirts Wall - Stairway" idol.
 - Equip the "Homeward Idol" on your item action bar and scroll to it so it is selected.
     - Time how long it takes for your game to load after using the idol in this location.
     - If it takes longer than 15 seconds, change the "wait_time" variable in sekiroFarm2.py's "use_idol()" function.

@@ -3,6 +3,7 @@ import sekiro
 
 ## This farm route was inconsistent.
 # The enemies seem to eventually spawn slightly off and the player will hit the enemy's shoulder.
+# Leaving this here in case I ever want to try to make this more efficient.
 
 
 def countdown(seconds):
