@@ -7,8 +7,8 @@ Click the image below to see the bot in action:
 [![Alt text](https://img.youtube.com/vi/1Zt0m8rysnQ/0.jpg)](https://www.youtube.com/watch?v=1Zt0m8rysnQ)
 
 # Installation
-- Install Python 3+
-- Install PyDirectInput library: `pip install PyDirectInput`
+- Install Python v3.10.1 (Python 3+ should work without issue) `https://www.python.org/downloads/`
+- Install PyDirectInput v1.0.4 library: `pip install PyDirectInput==1.0.4`
 - Download and unzip this repository
 
 # Setup
@@ -19,13 +19,10 @@ Click the image below to see the bot in action:
         - Slow Movement Shift = alt
         - Move Forward = w
         - Move Back = s
-        - Move Left = a
-        - Move Right = d
         - Jump = space
         - Crouch/Release Crouch = q
     - Camera Controls:
         - Camera Up = up arrow key
-        - Camera Down = down arrow key
         - Camera Left = left arrow key
         - Camera Right = right arrow key
         - Camera Reset/Lock On = m
@@ -53,10 +50,13 @@ Click the image below to see the bot in action:
 - After killing the divine dragon, go to the "Ashina Outskirts - Outskirts Wall - Stairway" idol and rest at it.
 - Equip the "Homeward Idol" on your item action bar and scroll to it so it is selected.
     - Time how long it takes for your game to load after using the idol in this location.
-    - If it takes longer than 15 seconds, change the "wait_time" variable in sekiroFarm2.py's "use_idol()" function.
-- Pause the game and run the "sekiroFarm2.py" program.
+    - If it takes longer than 15 seconds, change the "wait_time" variable in sekiroBot.py's "use_idol()" function.
+- Pause the game and run the "sekiroBot.py" program.
     - You will see output in your terminal that the program has started and a 10 second countdown has begun.
 - Go back to Sekiro and unpause the game.
-- Review how much experience and gold you are receiving from a single kill and edit the following variables within sekiroFarm2.py's "print_farm_report()" function:
+- Review how much experience and gold you are receiving from a single kill and edit the following variables within sekiroBot.py's "print_farm_report()" function:
     - "money_from_kill"
     - "exp_from_kill"
+
+# Future Plans
+- This was just a simple project to farm for a few hours. It has already served its purpose. I have no plans to make this into a full bot or to write a proper interface.
