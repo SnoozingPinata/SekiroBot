@@ -115,7 +115,7 @@ def print_farm_report(run_count):
     print(f"  {experience_earned} experience points earned.\n")
 
 if __name__ == "__main__":
-    countdown(5)
+    countdown(10)
     counter = 0
     while True:
         counter += 1
