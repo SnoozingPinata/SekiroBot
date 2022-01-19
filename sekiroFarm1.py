@@ -1,30 +1,29 @@
-import pydirectinput
 import time
 import sekiro
 
-# instructions -- needs to go in a requirements or readme
-    # install python
-    # unlock the right game portion of sekiro
-    # setup keybinds
-    # setup idol on bar and set camera speed properly
+## This farm route was inconsistent.
+# The enemies seem to eventually spawn slightly off and the player will hit the enemy's shoulder.
 
 
 def countdown(seconds):
-    print(f"\n\nStarting Sekiro Farmer bot in {seconds} seconds. Set window focus to the game and exit any menus.")
+    print(f"\n\nStarting Sekiro Farmer bot in {seconds} seconds.")
+    print("Set window focus to the game and exit any menus.")
+    print("View the README for instructions on setup.")
     for i in range(0, seconds):
-        print(i + 1)
+        print(f" -- {i + 1}")
         time.sleep(1)
-    print("\nProceeding with farmbot...\n")
+    print("Proceeding with farmbot...")
 
 def use_idol():
     ### If your computer loads faster or slower, you may need to change this setting.
     # Just time how long it takes for your computer to load in and be ready and put that in here.
+    # add about 3 seconds as it's a good time to alt tab and stop the script
     wait_time = 18
-    print("Using Idol.")
+    print(" -- Using Idol.")
     sekiro.item_use()
-    pydirectinput.press('down')
-    pydirectinput.press('enter')
-    print(f"Waiting {wait_time} seconds for Loading Screen.")
+    sekiro.menu_down()
+    sekiro.menu_select()
+    print(f" -- Waiting {wait_time} seconds for Loading Screen.")
     time.sleep(wait_time)
 
 def prepare_jump():
@@ -36,8 +35,7 @@ def jump_and_grapple():
     print("Performing jump and grapple.")
     sekiro.jump()
     time.sleep(.2)
-    sekiro.grapple()
-    time.sleep(1.8)
+    sekiro.grapple(1.8)
 
 def drop_from_ledge():
     print("Dropping from ledge.")

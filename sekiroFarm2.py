@@ -1,10 +1,13 @@
-import pydirectinput
 import time
 import sekiro
 
 
 def countdown(seconds):
-    print(f"\n\nStarting Sekiro Farmer bot in {seconds} seconds. Set window focus to the game and exit any menus.")
+    print(f"\n\nStarting Sekiro Farmer bot in {seconds} seconds.")
+    print("Set window focus to the game and exit any menus.")
+    print("Warp to the 'Ashina Outskirts: Outskirts Wall - Stairway' idol.")
+    print("Set the current item to the homeward idol.")
+    print("View the README for instructions on setup.")
     for i in range(0, seconds):
         print(f" -- {i + 1}")
         time.sleep(1)
@@ -13,17 +16,17 @@ def countdown(seconds):
 def use_idol():
     ### If your computer loads faster or slower, you may need to change this setting.
     # Just time how long it takes for your computer to load in and be ready and put that in here.
+    # add about 3 seconds as it's a good time to alt tab and stop the script
     wait_time = 18
     print(" -- Using Idol.")
     sekiro.item_use()
-    pydirectinput.press('down')
-    pydirectinput.press('enter')
+    sekiro.menu_down()
+    sekiro.menu_select()
     print(f" -- Waiting {wait_time} seconds for Loading Screen.")
     time.sleep(wait_time)
 
 def bulwark_line_up():
     print(" -- Lining up with bulwark.")
-    # turn left ~150 degrees
     sekiro.camera_left(130)
     sekiro.walk_slow_start()
     sekiro.walk_forward(4)
@@ -63,10 +66,8 @@ def first_enemy_approach():
 def kill_and_collect():
     print(" -- Killing and collecting loot.")
     sekiro.camera_lock()
-    # main attack button to 1-hit kill, wait for death animation
     sekiro.attack()
     time.sleep(1.6)
-    # collect item
     sekiro.interact_hold(1.2)
 
 def platform_drop_off():
@@ -103,11 +104,15 @@ def farm_route_instructions():
 def print_farm_report(run_count):
     money_from_kill = 220
     exp_from_kill = 1854
+    enemies_per_run = 2
+    kill_count = run_count * enemies_per_run
+    money_earned = run_count * money_from_kill * enemies_per_run
+    experience_earned = run_count * exp_from_kill * enemies_per_run
     print("---------- Farm Bot Report ----------")
     print(f"  {run_count} succesful run(s) completed.")
-    print(f"  {run_count * 2} kills.")
-    print(f"  {run_count * (money_from_kill * 2)} money earned.")
-    print(f"  {run_count * (exp_from_kill * 2)} experience points earned.\n")
+    print(f"  {kill_count} kills.")
+    print(f"  {money_earned} money earned.")
+    print(f"  {experience_earned} experience points earned.\n")
 
 if __name__ == "__main__":
     countdown(5)

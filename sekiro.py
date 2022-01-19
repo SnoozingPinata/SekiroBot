@@ -1,67 +1,92 @@
 import pydirectinput
 import time
 
+key_map = {
+    "slow movement shift" : 'alt',
+    "move forward" : 'w',
+    "move back" : 's',
+    "move left" : 'a',
+    "move right" : 'd',
+    "step dodge, (hold) sprint" : 'shift',
+    "jump" : 'space',
+    "crouch/release crouch" : 'q',
+    "camera up" : 'up',
+    "camera down" : 'down',
+    "camera left" : 'left',
+    "camera right" : 'right',
+    "camera reset/lock on" : 'm',
+    "cycle quick items (forward)" : 'x',
+    "cycle quick items (reverse)" : 'c',
+    "cycle prosthetic tool" : 'z',
+    "attack" : 'n',
+    "use prosthetic tool" : 'ctrl',
+    "deflect, (hold) guard" : '',
+    "grappling hook" : 'f',
+    "action, (hold) collect loot" : 'e',
+    "use item" : 'r',
+    "eavesdrop/touch remnant" : 'v',
+    "remnant menu/stop recording" : 'g'
+}
+
+
 ## Controller interface for the player character.
 # walking controls
 def walk_left(seconds):
-    pydirectinput.keyDown('a')
+    pydirectinput.keyDown(key_map["move left"])
     time.sleep(seconds)
-    pydirectinput.keyUp('a')
+    pydirectinput.keyUp(key_map["move left"])
 
 def walk_right(seconds):
-    pydirectinput.keyDown('d')
+    pydirectinput.keyDown(key_map["move right"])
     time.sleep(seconds)
-    pydirectinput.keyUp('d')
+    pydirectinput.keyUp(key_map["move right"])
 
 def walk_forward(seconds):
-    pydirectinput.keyDown('w')
+    pydirectinput.keyDown(key_map["move forward"])
     time.sleep(seconds)
-    pydirectinput.keyUp('w')
+    pydirectinput.keyUp(key_map["move forward"])
 
 def walk_forward_hold():
-    pydirectinput.keyDown('w')
+    pydirectinput.keyDown(key_map["move forward"])
 
 def walk_forward_hold_stop():
-    pydirectinput.keyUp('w')
+    pydirectinput.keyUp(key_map["move forward"])
 
 def walk_backwards(seconds):
-    pydirectinput.keyDown('s')
+    pydirectinput.keyDown(key_map["move back"])
     time.sleep(seconds)
-    pydirectinput.keyUp('s')
+    pydirectinput.keyUp(key_map["move back"])
 
 def walk_slow_start():
-    pydirectinput.keyDown('alt')
+    pydirectinput.keyDown(key_map["slow movement shift"])
 
 def walk_slow_stop():
-    pydirectinput.keyUp('alt')
+    pydirectinput.keyUp(key_map["slow movement shift"])
 
 
 # action controls
 def toggle_stealth():
-    pydirectinput.press('q')
+    pydirectinput.press(key_map["crouch/release crouch"])
 
 def jump():
-    pydirectinput.press('space')
+    pydirectinput.press(key_map['jump'])
 
 def dodge():
-    pydirectinput.press('shift')
+    pydirectinput.press(key_map["step dodge, (hold) sprint"])
 
 def interact():
-    pydirectinput.press('e')
+    pydirectinput.press(key_map["action, (hold) collect loot"])
 
 def interact_hold(seconds):
-    pydirectinput.keyDown('e')
+    pydirectinput.keyDown(key_map["action, (hold) collect loot"])
     time.sleep(seconds)
-    pydirectinput.keyUp('e')
+    pydirectinput.keyUp(key_map["action, (hold) collect loot"])
 
 def attack():
-    pydirectinput.press('n')
-
-def block():
-    raise NotImplementedError
+    pydirectinput.press(key_map["attack"])
 
 def grapple(travel_time):
-    pydirectinput.press('f')
+    pydirectinput.press(key_map["grappling hook"])
     time.sleep(travel_time)
 
 def grapple_repeat_for(seconds, travel_time):
@@ -75,48 +100,42 @@ def grapple_repeat_for(seconds, travel_time):
 
 # item controls
 def item_use():
-    pydirectinput.press('r')
-
-def item_switch_right():
-    raise NotImplementedError
-
-def item_switch_left():
-    raise NotImplementedError
-
-
-# prosthesis controls
-def prosthesis_switch():
-    pydirectinput.press('z')
-
-def prosthesis_use():
-    pydirectinput.press('ctrl')
+    pydirectinput.press(key_map["use item"])
 
 
 # camera controls
 def _camera_horizontal_seconds_for_degree(angle):
-    # 90 degrees is almost exactly .4 seconds, will need to fine tune.
+    # 90 degrees is almost exactly .4 seconds.
+    # This is not perfectly accurate! 
+    # It worked well enough for me that I didn't have to tune this.
     return (angle / 90) * .4
 
 def camera_lock():
-    pydirectinput.press('m')
+    pydirectinput.press(key_map["camera reset/lock on"])
 
 def camera_left(degrees):
     seconds = _camera_horizontal_seconds_for_degree(degrees)
-    pydirectinput.keyDown('left')
+    pydirectinput.keyDown(key_map["camera left"])
     time.sleep(seconds)
-    pydirectinput.keyUp('left')
+    pydirectinput.keyUp(key_map["camera left"])
 
 def camera_right(degrees):
     seconds = _camera_horizontal_seconds_for_degree(degrees)
-    pydirectinput.keyDown('right')
+    pydirectinput.keyDown(key_map["camera right"])
     time.sleep(seconds)
-    pydirectinput.keyUp('right')
+    pydirectinput.keyUp(key_map["camera right"])
 
 def camera_up(degrees):
+    # I only needed this function for one small part so I didn't make a vertical translator function.
     seconds = _camera_horizontal_seconds_for_degree(degrees)
-    pydirectinput.keyDown('up')
+    pydirectinput.keyDown(key_map["camera up"])
     time.sleep(seconds)
-    pydirectinput.keyUp('up')
+    pydirectinput.keyUp(key_map["camera up"])
 
-def camera_down(degrees):
-    raise NotImplementedError
+
+# menu controls
+def menu_down():
+    pydirectinput.press('down')
+    
+def menu_select():
+    pydirectinput.press('enter')
