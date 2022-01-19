@@ -15,7 +15,7 @@ def countdown(seconds):
 
 def use_idol():
     ### If your computer loads faster or slower, you may need to change this setting.
-    # Just time how long it takes for your computer to load in and be ready and put that in here.
+    # Use a stopwatch to time using the idol - stop when game is fully loaded.
     # add about 3 seconds as it's a good time to alt tab and stop the script
     wait_time = 18
     print(" -- Using Idol.")
